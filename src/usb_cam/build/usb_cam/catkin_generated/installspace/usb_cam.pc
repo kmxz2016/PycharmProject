@@ -1,8 +1,0 @@
-prefix=/home/km/catkin_ws/usb_cam/install
-
-Name: usb_cam
-Description: Description of usb_cam
-Version: 0.3.6
-Cflags: -I/home/km/catkin_ws/usb_cam/install/include
-Libs: -L/home/km/catkin_ws/usb_cam/install/lib -lusb_cam
-Requires: 
