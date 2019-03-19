@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="kinect_camera">
+
+    <xacro:macro name="kinect_camera" params="prefix:=camera">
+    <property name="PI" value="3.14159265" />
+        <link name="${prefix}_link">
+            <origin xyz="4.8525E-06 -0.00027138 0.054503"
+        rpy="0 0 0"/>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 ${PI/2}"/>
+                <geometry>
+                    <mesh filename="package://sixrobot_description/meshes/kinect.dae" />
+                </geometry>
+            </visual>
+        </link>
+
+        <joint name="${prefix}_optical_joint" type="fixed">
+            <origin xyz="-0.046785 -0.001336 0.0040016"
+      rpy="-0.61742 -1.4661 0.64856"/>
+            <parent link="${prefix}_link"/>
+            <child link="${prefix}_frame_optical"/>
+        </joint>
+
+        <link name="${prefix}_frame_optical"/>
+    </xacro:macro>
+
+</robot>

@@ -1,0 +1,2 @@
+usb_cam
+-DCATKIN_DEVEL_PREFIX=/home/km/catkin_ws/usb_cam/devel -DCMAKE_INSTALL_PREFIX=/home/km/catkin_ws/usb_cam/install -G Unix Makefiles

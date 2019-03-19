@@ -1,0 +1,126 @@
+<?xml version="1.0" ?>
+<robot name="sixrobot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- ros_control plugin -->
+  <gazebo>
+    <plugin name="ros_control" filename="lib_gazebo_ros_control.so">
+      <robotNamespace>/robot</robotNamespace>
+    </plugin>
+  </gazebo>
+  <!-- Gazebo-Specific Link Properties -->
+  <gazebo reference="world_joint">
+  <selfCollide>true</selfCollide>
+  <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="base_link">
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <gazebo reference="joint1">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="joint2">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="joint3">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="joint4">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="joint5">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="joint6">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <!-- Transmissions -->
+  <!-- Arm -->
+  <transmission name="tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="tran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="tran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="tran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint4">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor4">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="tran5">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint5">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor5">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="tran6">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint6">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor6">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- controller -->
+  <gazebo>
+      <plugin name="ros_control" 
+              filename="libgazebo_ros_control.so">
+          <rosDebugLevel>Debug</rosDebugLevel>
+          <publishTF>true</publishTF>
+          <robotNamespace>/</robotNamespace>
+          <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+          <publishTf>1</publishTf>
+          <publishJointState>true</publishJointState>
+          <alwaysOn>true</alwaysOn>
+          <updateRate>100.0</updateRate>
+          <legacyMode>true</legacyMode>
+          <broadcastTF>1</broadcastTF>
+          <Torque>30</Torque>
+          <Acceleration>1.8</Acceleration>
+          <commandTopic>cmd_vel</commandTopic>
+          <robotBaseFrame>world</robotBaseFrame>
+      </plugin>
+  </gazebo> 
+</robot>

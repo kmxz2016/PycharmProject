@@ -1,0 +1,2 @@
+arbotix_ros/arbotix:arbotix_ros/arbotix_controllers:arbotix_ros/arbotix_firmware:arbotix_ros/arbotix_msgs:arbotix_ros/arbotix_python:arbotix_ros/arbotix_sensors:moveit_tutorials:robot_vision:robot_voice:sixrobot_core_msgs:sixrobot_description:sixrobot_gazebo:sixrobot_maintenance_msgs:sixrobot_moveit_config:usb_cam/src/usb_cam
+-DCATKIN_DEVEL_PREFIX=/home/km/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/km/catkin_ws/install -G Unix Makefiles

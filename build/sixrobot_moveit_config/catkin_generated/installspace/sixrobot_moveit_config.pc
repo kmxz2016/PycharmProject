@@ -1,0 +1,8 @@
+prefix=/home/km/catkin_ws/install
+
+Name: sixrobot_moveit_config
+Description: Description of sixrobot_moveit_config
+Version: 0.3.0
+Cflags: 
+Libs: -L/home/km/catkin_ws/install/lib 
+Requires: 

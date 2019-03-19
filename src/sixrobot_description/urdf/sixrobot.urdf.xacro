@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<robot name="sixrobot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:arg name="gazebo" default="false"/>
+  <!-- sixrobot Base URDF -->
+  <xacro:include filename="$(find sixrobot_description)/urdf/xacro/gazebo/sixrobot_base_gazebo.xacro">
+    <xacro:arg name="gazebo" value="${gazebo}"/>
+  </xacro:include>
+
+  <xacro:arg name="gazebo" default="false"/>
+  <!-- sixrobot Base URDF -->
+  <xacro:include filename="$(find sixrobot_description)/urdf/xacro/gazebo/sixrobot_base.urdf.xacro">
+    <xacro:arg name="gazebo" value="${gazebo}"/>
+  </xacro:include>
+
+</robot>

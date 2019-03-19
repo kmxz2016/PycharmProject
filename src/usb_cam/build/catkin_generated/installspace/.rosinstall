@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/km/catkin_ws/usb_cam/install/setup.sh
