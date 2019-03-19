@@ -3,13 +3,7 @@
 
     <xacro:arg name="gazebo" default="false"/>
     <!-- sixrobot Base URDF -->
-    <xacro:include filename="$(find sixrobot_description)/urdf/xacro/gazebo/sixrobot_base_gazebo.xacro">
-        <xacro:arg name="gazebo" value="${gazebo}"/>
-    </xacro:include>
-
-    <xacro:arg name="gazebo" default="false"/>
-    <!-- sixrobot Base URDF -->
-    <xacro:include filename="$(find sixrobot_description)/urdf/xacro/gazebo/sixrobot_base.urdf.xacro">
+    <xacro:include filename="$(find sixrobot_description)/urdf/xacro/gazebo/sixrobot_gazebo.xacro">
         <xacro:arg name="gazebo" value="${gazebo}"/>
     </xacro:include>
 
@@ -19,7 +13,7 @@
         <xacro:arg name="gazebo" value="${gazebo}"/>
     </xacro:include>
 
-    <xacro:property name="lidar_offset_x" value="0" />
+    <xacro:property name="lidar_offset_x" value="0.14555" />
     <xacro:property name="lidar_offset_y" value="0" />
     <xacro:property name="lidar_offset_z" value="0.105" />
 

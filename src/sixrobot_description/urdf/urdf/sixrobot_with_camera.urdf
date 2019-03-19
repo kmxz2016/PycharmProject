@@ -394,16 +394,16 @@
         <visual>
             <origin xyz=" 0 0 0 " rpy="0 0 0" />
             <geometry>
-                <box size="0.03 0.04 0.04" />
+                <box size="0.04 0.02 0.02" />
             </geometry>
             <material name="black">
-                <color rgba="0 0 0 0.95"/>
+                <color rgba="0 0 255 1"/>
             </material>
         </visual>
     </link>
 
     <joint name="camera_joint" type="fixed">
-        <origin xyz="0.17 0 0.10" rpy="0 0 0"/>
+        <origin xyz="0.14555 0 0.10" rpy="0 0 0"/>
         <parent link="base_link"/>
         <child link="camera_link"/>
     </joint>

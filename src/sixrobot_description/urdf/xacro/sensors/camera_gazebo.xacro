@@ -6,29 +6,33 @@
         <link name="${prefix}_link">
             <inertial>
                 <mass value="0.1" />
-                <origin xyz="0 0 0" />
-                <inertia ixx="0.01" ixy="0.0" ixz="0.0"
-                         iyy="0.01" iyz="0.0"
-                         izz="0.01" />
+                <origin xyz="0 0 0.054503" 
+                        rpy="0 0 0" />
+                <inertia ixx="5.4771E-05"
+                         ixy="2.9237E-08"
+                         ixz="4.993E-09"
+                         iyy="5.4752E-05"
+                         iyz="4.997E-08"
+                         izz="3.9349E-06" />
             </inertial>
 
             <visual>
                 <origin xyz=" 0 0 0 " rpy="0 0 0" />
                 <geometry>
-                    <box size="0.01 0.04 0.04" />
+                    <box size="0.04 0.02 0.02" />
                 </geometry>
-                <material name="red"/>
+                <material name="black"/>
             </visual>
 
             <collision>
                 <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
                 <geometry>
-                    <box size="0.01 0.04 0.04" />
+                    <box size="0.04 0.02 0.02" />
                 </geometry>
             </collision>
         </link>
         <gazebo reference="${prefix}_link">
-            <material>Gazebo/Red</material>
+            <material>Gazebo/Black</material>
         </gazebo>
 
         <gazebo reference="${prefix}_link">

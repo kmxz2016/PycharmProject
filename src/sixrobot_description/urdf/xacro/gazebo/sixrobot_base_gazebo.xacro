@@ -103,24 +103,5 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-  <!-- controller -->
-  <gazebo>
-      <plugin name="ros_control" 
-              filename="libgazebo_ros_control.so">
-          <rosDebugLevel>Debug</rosDebugLevel>
-          <publishTF>true</publishTF>
-          <robotNamespace>/</robotNamespace>
-          <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
-          <publishTf>1</publishTf>
-          <publishJointState>true</publishJointState>
-          <alwaysOn>true</alwaysOn>
-          <updateRate>100.0</updateRate>
-          <legacyMode>true</legacyMode>
-          <broadcastTF>1</broadcastTF>
-          <Torque>30</Torque>
-          <Acceleration>1.8</Acceleration>
-          <commandTopic>cmd_vel</commandTopic>
-          <robotBaseFrame>world</robotBaseFrame>
-      </plugin>
-  </gazebo> 
+
 </robot>
