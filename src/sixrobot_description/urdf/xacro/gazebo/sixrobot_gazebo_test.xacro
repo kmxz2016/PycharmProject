@@ -18,17 +18,17 @@
     name="base_link">
     <inertial>
       <origin
-        xyz="0.14555 0.062586 -0.15713"
+        xyz="-0.0075525 0.02417 0.018438"
         rpy="0 0 0" />
       <mass
-        value="4.0022" />
+        value="3.0395" />
       <inertia
-        ixx="0.012253"
-        ixy="-2.6729E-06"
-        ixz="2.0656E-06"
-        iyy="0.0093348"
-        iyz="0.0019878"
-        izz="0.003386" />
+        ixx="0.0025797"
+        ixy="8.6805E-05"
+        ixz="0.00017161"
+        iyy="0.0014934"
+        iyz="-0.00032354"
+        izz="0.002124" />
     </inertial>
     <visual>
       <origin
@@ -38,7 +38,11 @@
         <mesh
           filename="package://sixrobot_description/meshes/base_link.stl" />
       </geometry>
-      <material name="white"/>
+      <material
+        name="">
+        <color
+          rgba="255 250 250 1" />
+      </material>
     </visual>
     <collision>
       <origin
@@ -54,17 +58,17 @@
     name="Link1">
     <inertial>
       <origin
-        xyz="0.014283 0.062229 -0.0073351"
+        xyz="-0.003411 0.071928 -0.0017952"
         rpy="0 0 0" />
       <mass
-        value="2.9711" />
+        value="3.1834" />
       <inertia
-        ixx="0.0030896"
-        ixy="4.1872E-05"
-        ixz="-0.0003107"
-        iyy="0.004441"
-        iyz="1.6622E-05"
-        izz="0.0027928" />
+        ixx="0.0066967"
+        ixy="0.00031535"
+        ixz="-1.9127E-05"
+        iyy="0.0018398"
+        iyz="0.0002558"
+        izz="0.0050889" />
     </inertial>
     <visual>
       <origin
@@ -74,7 +78,11 @@
         <mesh
           filename="package://sixrobot_description/meshes/Link1.stl" />
       </geometry>
-      <material name="red"/>
+      <material
+        name="">
+        <color
+          rgba="255 0 0 1" />
+      </material>
     </visual>
     <collision>
       <origin
@@ -90,8 +98,8 @@
     name="joint1"
     type="revolute">
     <origin
-      xyz="0.14553 0.082167 0.0937"
-      rpy="1.5708 1.2811E-08 1.5708" />
+      xyz="-0.0088055 -0.022514 0.09434"
+      rpy="1.5708 5.6825E-17 1.1891" />
     <parent
       link="base_link" />
     <child
@@ -99,8 +107,8 @@
     <axis
       xyz="0 1 0" />
     <limit
-      lower="-1.57"
-      upper="1.57"
+      lower="-1.5708"
+      upper="1.5708"
       effort="0"
       velocity="0" />
   </joint>
@@ -108,17 +116,17 @@
     name="Link2">
     <inertial>
       <origin
-        xyz="-0.081903 -6.2825E-05 -0.0062784"
+        xyz="0.14201 -8.8599E-08 -0.00098855"
         rpy="0 0 0" />
       <mass
-        value="1.2043" />
+        value="2.1027" />
       <inertia
-        ixx="0.0012825"
-        ixy="-4.0552E-06"
-        ixz="-0.0004638"
-        iyy="0.0034706"
-        iyz="-3.3631E-06"
-        izz="0.0022087" />
+        ixx="0.0029075"
+        ixy="9.7718E-08"
+        ixz="0.00037105"
+        iyy="0.015387"
+        iyz="-1.4864E-08"
+        izz="0.012594" />
     </inertial>
     <visual>
       <origin
@@ -128,7 +136,11 @@
         <mesh
           filename="package://sixrobot_description/meshes/Link2.stl" />
       </geometry>
-      <material name="green"/>
+      <material
+        name="">
+        <color
+          rgba="0 255 0 1" />
+      </material>
     </visual>
     <collision>
       <origin
@@ -144,17 +156,17 @@
     name="joint2"
     type="revolute">
     <origin
-      xyz="-0.053834 0.12 0"
-      rpy="-4.996E-14 -1.6098E-13 -2.8449" />
+      xyz="-0.005 0.1 0"
+      rpy="3.1416 -1.1269E-15 1.5708" />
     <parent
       link="Link1" />
     <child
       link="Link2" />
     <axis
-      xyz="0 0 1" />
+      xyz="0 0 -1" />
     <limit
-      lower="0.296"
-      upper="3.768"
+      lower="-1.5708"
+      upper="1.5708"
       effort="0"
       velocity="0" />
   </joint>
@@ -162,17 +174,17 @@
     name="Link3">
     <inertial>
       <origin
-        xyz="-0.0030891 0.053464 0.0015565"
+        xyz="-0.089574 0.0018335 0.00017688"
         rpy="0 0 0" />
       <mass
-        value="0.79833" />
+        value="1.9613" />
       <inertia
-        ixx="0.0019731"
-        ixy="0.00011484"
-        ixz="-4.1195E-06"
-        iyy="0.00037597"
-        iyz="6.6446E-05"
-        izz="0.0019652" />
+        ixx="0.0019119"
+        ixy="5.1275E-05"
+        ixz="-3.1104E-05"
+        iyy="0.0043906"
+        iyz="6.3374E-07"
+        izz="0.0034664" />
     </inertial>
     <visual>
       <origin
@@ -182,7 +194,11 @@
         <mesh
           filename="package://sixrobot_description/meshes/Link3.stl" />
       </geometry>
-      <material name="blue"/>
+      <material
+        name="">
+        <color
+          rgba="0 0 255 1" />
+      </material>
     </visual>
     <collision>
       <origin
@@ -198,17 +214,17 @@
     name="joint3"
     type="revolute">
     <origin
-      xyz="-0.19 0 0"
-      rpy="-4.4409E-14 -1.4433E-13 -3.1416" />
+      xyz="0.205 0 0"
+      rpy="-1.1102E-16 1.6099E-16 3.1416" />
     <parent
       link="Link2" />
     <child
       link="Link3" />
     <axis
-      xyz="0 0 1" />
+      xyz="0 0 -1" />
     <limit
-      lower="-3.14"
-      upper="0"
+      lower="-1.5708"
+      upper="1.5708"
       effort="0"
       velocity="0" />
   </joint>
@@ -216,17 +232,17 @@
     name="Link4">
     <inertial>
       <origin
-        xyz="-0.10243 0.00012682 -0.0034682"
+        xyz="0.16649 0.021449 0.029405"
         rpy="0 0 0" />
       <mass
-        value="0.77257" />
+        value="1.7626" />
       <inertia
-        ixx="0.00045081"
-        ixy="-4.7414E-06"
-        ixz="-1.86E-05"
-        iyy="0.0019073"
-        iyz="-8.0337E-08"
-        izz="0.0014729" />
+        ixx="0.00091529"
+        ixy="-0.0006452"
+        ixz="-0.00077218"
+        iyy="0.0057445"
+        iyz="-3.1391E-05"
+        izz="0.0051203" />
     </inertial>
     <visual>
       <origin
@@ -236,7 +252,11 @@
         <mesh
           filename="package://sixrobot_description/meshes/Link4.stl" />
       </geometry>
-      <material name="red"/>
+      <material
+        name="">
+        <color
+          rgba="255 0 0 1" />
+      </material>
     </visual>
     <collision>
       <origin
@@ -252,14 +272,14 @@
     name="joint4"
     type="revolute">
     <origin
-      xyz="0 0.072 0"
-      rpy="-8.3267E-15 1.0547E-13 6.4893E-14" />
+      xyz="-0.11 0 0"
+      rpy="-0.13967 0.1538 1.4216" />
     <parent
       link="Link3" />
     <child
       link="Link4" />
     <axis
-      xyz="-1 0 0" />
+      xyz="0.97722 0.12611 0.17071" />
     <limit
       lower="-1.5708"
       upper="1.5708"
@@ -270,17 +290,17 @@
     name="Link5">
     <inertial>
       <origin
-        xyz="-0.03177 0.012539 -0.0082766"
+        xyz="-0.088587 5.3876E-09 0.00082307"
         rpy="0 0 0" />
       <mass
-        value="0.7621" />
+        value="1.9415" />
       <inertia
-        ixx="0.00088662"
-        ixy="0.00027254"
-        ixz="0.00023505"
-        iyy="0.0011014"
-        iyz="-0.00012409"
-        izz="0.0010153" />
+        ixx="0.0015409"
+        ixy="7.8172E-09"
+        ixz="-2.9862E-05"
+        iyy="0.0044095"
+        iyz="-8.3622E-08"
+        izz="0.0033388" />
     </inertial>
     <visual>
       <origin
@@ -290,7 +310,11 @@
         <mesh
           filename="package://sixrobot_description/meshes/Link5.stl" />
       </geometry>
-      <material name="green"/>
+      <material
+        name="">
+        <color
+          rgba="0 255 0 1" />
+      </material>
     </visual>
     <collision>
       <origin
@@ -306,17 +330,17 @@
     name="joint5"
     type="revolute">
     <origin
-      xyz="-0.182 0 0"
-      rpy="0.06337 -0.083358 -0.060704" />
+      xyz="0.20277 0.026168 0.035423"
+      rpy="-0.11711 0.17155 -3.0132" />
     <parent
       link="Link4" />
     <child
       link="Link5" />
     <axis
-      xyz="0.083262 0.063107 0.99453" />
+      xyz="0 0 -1" />
     <limit
-      lower="-0.69"
-      upper="1.57"
+      lower="-1.5708"
+      upper="1.5708"
       effort="0"
       velocity="0" />
   </joint>
@@ -324,17 +348,17 @@
     name="Link6">
     <inertial>
       <origin
-        xyz="4.8525E-06 -0.00027138 0.054503"
+        xyz="-0.015821 9.9334E-07 -2.6332E-07"
         rpy="0 0 0" />
       <mass
-        value="0.28753" />
+        value="0.049116" />
       <inertia
-        ixx="5.4771E-05"
-        ixy="2.9237E-08"
-        ixz="4.993E-09"
-        iyy="5.4752E-05"
-        iyz="4.997E-08"
-        izz="3.9349E-06" />
+        ixx="6.9904E-08"
+        ixy="-6.6644E-10"
+        ixz="1.7849E-10"
+        iyy="6.1773E-07"
+        iyz="4.2067E-13"
+        izz="6.1773E-07" />
     </inertial>
     <visual>
       <origin
@@ -344,7 +368,11 @@
         <mesh
           filename="package://sixrobot_description/meshes/Link6.stl" />
       </geometry>
-      <material name="blue"/>
+      <material
+        name="">
+        <color
+          rgba="0 0 255 1" />
+      </material>
     </visual>
     <collision>
       <origin
@@ -358,21 +386,16 @@
   </link>
   <joint
     name="joint6"
-    type="revolute">
+    type="continuous">
     <origin
-      xyz="-0.046785 -0.001336 0.0040016"
-      rpy="-0.61742 -1.4661 0.64856" />
+      xyz="-0.13508 0 0.000625"
+      rpy="-1.8616 -2.3315E-15 8.5363E-18" />
     <parent
       link="Link5" />
     <child
       link="Link6" />
     <axis
-      xyz="0 0 1" />
-    <limit
-      lower="-1.5708"
-      upper="1.5708"
-      effort="0"
-      velocity="0" />
+      xyz="-1 0 0" />
   </joint>
 
   <!-- ros_control plugin -->
