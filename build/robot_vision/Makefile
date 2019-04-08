@@ -56,6 +56,38 @@ CMAKE_BINARY_DIR = /home/km/catkin_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -79,27 +111,6 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
@@ -111,27 +122,16 @@ install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target install/local
+install/local/fast: install/local
 
-.PHONY : edit_cache/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
+.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,154 +166,88 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-robot_vision/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_vision/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-.PHONY : robot_vision/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+robot_vision/CMakeFiles/image_converter.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_vision/CMakeFiles/image_converter.dir/rule
+.PHONY : robot_vision/CMakeFiles/image_converter.dir/rule
 
 # Convenience name for target.
-sensor_msgs_generate_messages_nodejs: robot_vision/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+image_converter: robot_vision/CMakeFiles/image_converter.dir/rule
 
-.PHONY : sensor_msgs_generate_messages_nodejs
+.PHONY : image_converter
 
 # fast build rule for target.
-sensor_msgs_generate_messages_nodejs/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f robot_vision/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make robot_vision/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
-.PHONY : sensor_msgs_generate_messages_nodejs/fast
+image_converter/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f robot_vision/CMakeFiles/image_converter.dir/build.make robot_vision/CMakeFiles/image_converter.dir/build
+.PHONY : image_converter/fast
 
 # Convenience name for target.
-robot_vision/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_vision/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-.PHONY : robot_vision/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+robot_vision/CMakeFiles/visonManager.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_vision/CMakeFiles/visonManager.dir/rule
+.PHONY : robot_vision/CMakeFiles/visonManager.dir/rule
 
 # Convenience name for target.
-sensor_msgs_generate_messages_eus: robot_vision/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+visonManager: robot_vision/CMakeFiles/visonManager.dir/rule
 
-.PHONY : sensor_msgs_generate_messages_eus
+.PHONY : visonManager
 
 # fast build rule for target.
-sensor_msgs_generate_messages_eus/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f robot_vision/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make robot_vision/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
-.PHONY : sensor_msgs_generate_messages_eus/fast
+visonManager/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f robot_vision/CMakeFiles/visonManager.dir/build.make robot_vision/CMakeFiles/visonManager.dir/build
+.PHONY : visonManager/fast
 
-# Convenience name for target.
-robot_vision/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_vision/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-.PHONY : robot_vision/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+src/image_converter.o: src/image_converter.cpp.o
 
-# Convenience name for target.
-sensor_msgs_generate_messages_py: robot_vision/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+.PHONY : src/image_converter.o
 
-.PHONY : sensor_msgs_generate_messages_py
+# target to build an object file
+src/image_converter.cpp.o:
+	cd /home/km/catkin_ws/build && $(MAKE) -f robot_vision/CMakeFiles/image_converter.dir/build.make robot_vision/CMakeFiles/image_converter.dir/src/image_converter.cpp.o
+.PHONY : src/image_converter.cpp.o
 
-# fast build rule for target.
-sensor_msgs_generate_messages_py/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f robot_vision/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make robot_vision/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-.PHONY : sensor_msgs_generate_messages_py/fast
+src/image_converter.i: src/image_converter.cpp.i
 
-# Convenience name for target.
-robot_vision/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_vision/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-.PHONY : robot_vision/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+.PHONY : src/image_converter.i
 
-# Convenience name for target.
-sensor_msgs_generate_messages_lisp: robot_vision/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+# target to preprocess a source file
+src/image_converter.cpp.i:
+	cd /home/km/catkin_ws/build && $(MAKE) -f robot_vision/CMakeFiles/image_converter.dir/build.make robot_vision/CMakeFiles/image_converter.dir/src/image_converter.cpp.i
+.PHONY : src/image_converter.cpp.i
 
-.PHONY : sensor_msgs_generate_messages_lisp
+src/image_converter.s: src/image_converter.cpp.s
 
-# fast build rule for target.
-sensor_msgs_generate_messages_lisp/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f robot_vision/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make robot_vision/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
-.PHONY : sensor_msgs_generate_messages_lisp/fast
+.PHONY : src/image_converter.s
 
-# Convenience name for target.
-robot_vision/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_vision/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-.PHONY : robot_vision/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+# target to generate assembly for a file
+src/image_converter.cpp.s:
+	cd /home/km/catkin_ws/build && $(MAKE) -f robot_vision/CMakeFiles/image_converter.dir/build.make robot_vision/CMakeFiles/image_converter.dir/src/image_converter.cpp.s
+.PHONY : src/image_converter.cpp.s
 
-# Convenience name for target.
-sensor_msgs_generate_messages_cpp: robot_vision/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+src/vision_manager.o: src/vision_manager.cpp.o
 
-.PHONY : sensor_msgs_generate_messages_cpp
+.PHONY : src/vision_manager.o
 
-# fast build rule for target.
-sensor_msgs_generate_messages_cpp/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f robot_vision/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make robot_vision/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
-.PHONY : sensor_msgs_generate_messages_cpp/fast
+# target to build an object file
+src/vision_manager.cpp.o:
+	cd /home/km/catkin_ws/build && $(MAKE) -f robot_vision/CMakeFiles/visonManager.dir/build.make robot_vision/CMakeFiles/visonManager.dir/src/vision_manager.cpp.o
+.PHONY : src/vision_manager.cpp.o
 
-# Convenience name for target.
-robot_vision/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_vision/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : robot_vision/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+src/vision_manager.i: src/vision_manager.cpp.i
 
-# Convenience name for target.
-geometry_msgs_generate_messages_py: robot_vision/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+.PHONY : src/vision_manager.i
 
-.PHONY : geometry_msgs_generate_messages_py
+# target to preprocess a source file
+src/vision_manager.cpp.i:
+	cd /home/km/catkin_ws/build && $(MAKE) -f robot_vision/CMakeFiles/visonManager.dir/build.make robot_vision/CMakeFiles/visonManager.dir/src/vision_manager.cpp.i
+.PHONY : src/vision_manager.cpp.i
 
-# fast build rule for target.
-geometry_msgs_generate_messages_py/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f robot_vision/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make robot_vision/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-.PHONY : geometry_msgs_generate_messages_py/fast
+src/vision_manager.s: src/vision_manager.cpp.s
 
-# Convenience name for target.
-robot_vision/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_vision/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-.PHONY : robot_vision/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+.PHONY : src/vision_manager.s
 
-# Convenience name for target.
-geometry_msgs_generate_messages_cpp: robot_vision/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_cpp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f robot_vision/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make robot_vision/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-robot_vision/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_vision/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-.PHONY : robot_vision/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_eus: robot_vision/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_eus
-
-# fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f robot_vision/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make robot_vision/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-robot_vision/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_vision/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-.PHONY : robot_vision/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_lisp: robot_vision/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_lisp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_lisp/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f robot_vision/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make robot_vision/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-.PHONY : geometry_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-robot_vision/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_vision/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-.PHONY : robot_vision/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_nodejs: robot_vision/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-geometry_msgs_generate_messages_nodejs/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f robot_vision/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make robot_vision/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
-.PHONY : geometry_msgs_generate_messages_nodejs/fast
+# target to generate assembly for a file
+src/vision_manager.cpp.s:
+	cd /home/km/catkin_ws/build && $(MAKE) -f robot_vision/CMakeFiles/visonManager.dir/build.make robot_vision/CMakeFiles/visonManager.dir/src/vision_manager.cpp.s
+.PHONY : src/vision_manager.cpp.s
 
 # Help Target
 help:
@@ -321,23 +255,21 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
-	@echo "... test"
-	@echo "... install/local"
-	@echo "... list_install_components"
-	@echo "... install/strip"
-	@echo "... edit_cache"
-	@echo "... sensor_msgs_generate_messages_nodejs"
-	@echo "... sensor_msgs_generate_messages_eus"
-	@echo "... sensor_msgs_generate_messages_py"
-	@echo "... sensor_msgs_generate_messages_lisp"
-	@echo "... sensor_msgs_generate_messages_cpp"
-	@echo "... geometry_msgs_generate_messages_py"
-	@echo "... geometry_msgs_generate_messages_cpp"
-	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... rebuild_cache"
-	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... geometry_msgs_generate_messages_nodejs"
+	@echo "... edit_cache"
+	@echo "... list_install_components"
+	@echo "... install"
+	@echo "... image_converter"
+	@echo "... test"
+	@echo "... visonManager"
+	@echo "... install/strip"
+	@echo "... install/local"
+	@echo "... src/image_converter.o"
+	@echo "... src/image_converter.i"
+	@echo "... src/image_converter.s"
+	@echo "... src/vision_manager.o"
+	@echo "... src/vision_manager.i"
+	@echo "... src/vision_manager.s"
 .PHONY : help
 
 

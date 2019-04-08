@@ -21,7 +21,7 @@
         xyz="-0.0075525 0.02417 0.018438"
         rpy="0 0 0" />
       <mass
-        value="3.0395" />
+        value="0.001" />
       <inertia
         ixx="0.0025797"
         ixy="8.6805E-05"
@@ -61,7 +61,7 @@
         xyz="-0.003411 0.071928 -0.0017952"
         rpy="0 0 0" />
       <mass
-        value="3.1834" />
+        value="0.001" />
       <inertia
         ixx="0.0066967"
         ixy="0.00031535"
@@ -119,7 +119,7 @@
         xyz="0.14201 -8.8599E-08 -0.00098855"
         rpy="0 0 0" />
       <mass
-        value="2.1027" />
+        value="0.001" />
       <inertia
         ixx="0.0029075"
         ixy="9.7718E-08"
@@ -177,7 +177,7 @@
         xyz="-0.089574 0.0018335 0.00017688"
         rpy="0 0 0" />
       <mass
-        value="1.9613" />
+        value="0.001" />
       <inertia
         ixx="0.0019119"
         ixy="5.1275E-05"
@@ -235,7 +235,7 @@
         xyz="0.16649 0.021449 0.029405"
         rpy="0 0 0" />
       <mass
-        value="1.7626" />
+        value="0.001" />
       <inertia
         ixx="0.00091529"
         ixy="-0.0006452"
@@ -293,7 +293,7 @@
         xyz="-0.088587 5.3876E-09 0.00082307"
         rpy="0 0 0" />
       <mass
-        value="1.9415" />
+        value="0.001" />
       <inertia
         ixx="0.0015409"
         ixy="7.8172E-09"
@@ -351,7 +351,7 @@
         xyz="-0.015821 9.9334E-07 -2.6332E-07"
         rpy="0 0 0" />
       <mass
-        value="0.049116" />
+        value="0.001" />
       <inertia
         ixx="6.9904E-08"
         ixy="-6.6644E-10"
@@ -400,10 +400,20 @@
 
   <!-- ros_control plugin -->
   <gazebo>
-    <plugin name="ros_control" filename="lib_gazebo_ros_control.so">
-      <robotNamespace>/robot</robotNamespace>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/sixrobot</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      <legacyModeNS>true</legacyModeNS>
     </plugin>
   </gazebo>
+
+
+  <!-- ros_control plugin -->
+  <!--<gazebo>
+    <plugin name="ros_control" filename="lib_gazebo_ros_control.so">
+      <robotNamespace>/sixrobot</robotNamespace>
+    </plugin>
+  </gazebo>-->
   <!-- Gazebo-Specific Link Properties -->
   <gazebo reference="world_joint">
     <selfCollide>true</selfCollide>
@@ -439,9 +449,30 @@
     <material>Gazebo/Blue</material>
   </gazebo>
 
+  <!-- Transmissions for ROS Control -->
+  <xacro:macro name="transmission_block" params="joint_name">
+    <transmission name="tran1">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${joint_name}">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor1">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+  </xacro:macro>
+  
+  <xacro:transmission_block joint_name="joint1"/>
+  <xacro:transmission_block joint_name="joint2"/>
+  <xacro:transmission_block joint_name="joint3"/>
+  <xacro:transmission_block joint_name="joint4"/>
+  <xacro:transmission_block joint_name="joint5"/>
+  <xacro:transmission_block joint_name="joint6"/>
+
   <!-- Transmissions -->
   <!-- Arm -->
-  <transmission name="tran1">
+  <!--<transmission name="tran1">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="joint1">
       <hardwareInterface>EffortJointInterface</hardwareInterface>
@@ -500,6 +531,6 @@
       <hardwareInterface>EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
-  </transmission>
+  </transmission>-->
 
 </robot>

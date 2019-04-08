@@ -66,16 +66,17 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -99,6 +100,17 @@ install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
+
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -120,18 +132,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,6 +166,66 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_genpy.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_genpy.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_genpy.dir/rule
+
+# Convenience name for target.
+sixrobot_core_msgs_genpy: sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_genpy.dir/rule
+
+.PHONY : sixrobot_core_msgs_genpy
+
+# fast build rule for target.
+sixrobot_core_msgs_genpy/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_genpy.dir/build.make sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_genpy.dir/build
+.PHONY : sixrobot_core_msgs_genpy/fast
+
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages_nodejs.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+sixrobot_core_msgs_generate_messages_nodejs: sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : sixrobot_core_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+sixrobot_core_msgs_generate_messages_nodejs/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages_nodejs.dir/build.make sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages_nodejs.dir/build
+.PHONY : sixrobot_core_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_gennodejs.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_gennodejs.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_gennodejs.dir/rule
+
+# Convenience name for target.
+sixrobot_core_msgs_gennodejs: sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_gennodejs.dir/rule
+
+.PHONY : sixrobot_core_msgs_gennodejs
+
+# fast build rule for target.
+sixrobot_core_msgs_gennodejs/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_gennodejs.dir/build.make sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_gennodejs.dir/build
+.PHONY : sixrobot_core_msgs_gennodejs/fast
+
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorState.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorState.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorState.dir/rule
+
+# Convenience name for target.
+_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorState: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorState.dir/rule
+
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_EndEffectorState
+
+# fast build rule for target.
+_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorState/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorState.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorState.dir/build
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_EndEffectorState/fast
+
+# Convenience name for target.
 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AnalogOutputCommand.dir/rule:
 	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AnalogOutputCommand.dir/rule
 .PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AnalogOutputCommand.dir/rule
@@ -179,336 +239,6 @@ _sixrobot_core_msgs_generate_messages_check_deps_AnalogOutputCommand: sixrobot_c
 _sixrobot_core_msgs_generate_messages_check_deps_AnalogOutputCommand/fast:
 	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AnalogOutputCommand.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AnalogOutputCommand.dir/build
 .PHONY : _sixrobot_core_msgs_generate_messages_check_deps_AnalogOutputCommand/fast
-
-# Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_SolvePositionIK.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_SolvePositionIK.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_SolvePositionIK.dir/rule
-
-# Convenience name for target.
-_sixrobot_core_msgs_generate_messages_check_deps_SolvePositionIK: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_SolvePositionIK.dir/rule
-
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_SolvePositionIK
-
-# fast build rule for target.
-_sixrobot_core_msgs_generate_messages_check_deps_SolvePositionIK/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_SolvePositionIK.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_SolvePositionIK.dir/build
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_SolvePositionIK/fast
-
-# Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CloseCamera.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CloseCamera.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CloseCamera.dir/rule
-
-# Convenience name for target.
-_sixrobot_core_msgs_generate_messages_check_deps_CloseCamera: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CloseCamera.dir/rule
-
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_CloseCamera
-
-# fast build rule for target.
-_sixrobot_core_msgs_generate_messages_check_deps_CloseCamera/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CloseCamera.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CloseCamera.dir/build
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_CloseCamera/fast
-
-# Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_genlisp.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_genlisp.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_genlisp.dir/rule
-
-# Convenience name for target.
-sixrobot_core_msgs_genlisp: sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_genlisp.dir/rule
-
-.PHONY : sixrobot_core_msgs_genlisp
-
-# fast build rule for target.
-sixrobot_core_msgs_genlisp/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_genlisp.dir/build.make sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_genlisp.dir/build
-.PHONY : sixrobot_core_msgs_genlisp/fast
-
-# Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_SEAJointState.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_SEAJointState.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_SEAJointState.dir/rule
-
-# Convenience name for target.
-_sixrobot_core_msgs_generate_messages_check_deps_SEAJointState: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_SEAJointState.dir/rule
-
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_SEAJointState
-
-# fast build rule for target.
-_sixrobot_core_msgs_generate_messages_check_deps_SEAJointState/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_SEAJointState.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_SEAJointState.dir/build
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_SEAJointState/fast
-
-# Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CameraSettings.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CameraSettings.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CameraSettings.dir/rule
-
-# Convenience name for target.
-_sixrobot_core_msgs_generate_messages_check_deps_CameraSettings: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CameraSettings.dir/rule
-
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_CameraSettings
-
-# fast build rule for target.
-_sixrobot_core_msgs_generate_messages_check_deps_CameraSettings/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CameraSettings.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CameraSettings.dir/build
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_CameraSettings/fast
-
-# Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AssemblyStates.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AssemblyStates.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AssemblyStates.dir/rule
-
-# Convenience name for target.
-_sixrobot_core_msgs_generate_messages_check_deps_AssemblyStates: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AssemblyStates.dir/rule
-
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_AssemblyStates
-
-# fast build rule for target.
-_sixrobot_core_msgs_generate_messages_check_deps_AssemblyStates/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AssemblyStates.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AssemblyStates.dir/build
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_AssemblyStates/fast
-
-# Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorProperties.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorProperties.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorProperties.dir/rule
-
-# Convenience name for target.
-_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorProperties: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorProperties.dir/rule
-
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_EndEffectorProperties
-
-# fast build rule for target.
-_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorProperties/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorProperties.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorProperties.dir/build
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_EndEffectorProperties/fast
-
-# Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOState.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOState.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOState.dir/rule
-
-# Convenience name for target.
-_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOState: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOState.dir/rule
-
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_DigitalIOState
-
-# fast build rule for target.
-_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOState/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOState.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOState.dir/build
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_DigitalIOState/fast
-
-# Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages.dir/rule
-
-# Convenience name for target.
-sixrobot_core_msgs_generate_messages: sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages.dir/rule
-
-.PHONY : sixrobot_core_msgs_generate_messages
-
-# fast build rule for target.
-sixrobot_core_msgs_generate_messages/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages.dir/build.make sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages.dir/build
-.PHONY : sixrobot_core_msgs_generate_messages/fast
-
-# Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CameraControl.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CameraControl.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CameraControl.dir/rule
-
-# Convenience name for target.
-_sixrobot_core_msgs_generate_messages_check_deps_CameraControl: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CameraControl.dir/rule
-
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_CameraControl
-
-# fast build rule for target.
-_sixrobot_core_msgs_generate_messages_check_deps_CameraControl/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CameraControl.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CameraControl.dir/build
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_CameraControl/fast
-
-# Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOStates.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOStates.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOStates.dir/rule
-
-# Convenience name for target.
-_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOStates: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOStates.dir/rule
-
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_AnalogIOStates
-
-# fast build rule for target.
-_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOStates/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOStates.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOStates.dir/build
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_AnalogIOStates/fast
-
-# Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_URDFConfiguration.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_URDFConfiguration.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_URDFConfiguration.dir/rule
-
-# Convenience name for target.
-_sixrobot_core_msgs_generate_messages_check_deps_URDFConfiguration: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_URDFConfiguration.dir/rule
-
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_URDFConfiguration
-
-# fast build rule for target.
-_sixrobot_core_msgs_generate_messages_check_deps_URDFConfiguration/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_URDFConfiguration.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_URDFConfiguration.dir/build
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_URDFConfiguration/fast
-
-# Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages_eus.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages_eus.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-sixrobot_core_msgs_generate_messages_eus: sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages_eus.dir/rule
-
-.PHONY : sixrobot_core_msgs_generate_messages_eus
-
-# fast build rule for target.
-sixrobot_core_msgs_generate_messages_eus/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages_eus.dir/build.make sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages_eus.dir/build
-.PHONY : sixrobot_core_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CollisionDetectionState.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CollisionDetectionState.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CollisionDetectionState.dir/rule
-
-# Convenience name for target.
-_sixrobot_core_msgs_generate_messages_check_deps_CollisionDetectionState: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CollisionDetectionState.dir/rule
-
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_CollisionDetectionState
-
-# fast build rule for target.
-_sixrobot_core_msgs_generate_messages_check_deps_CollisionDetectionState/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CollisionDetectionState.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CollisionDetectionState.dir/build
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_CollisionDetectionState/fast
-
-# Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalOutputCommand.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalOutputCommand.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalOutputCommand.dir/rule
-
-# Convenience name for target.
-_sixrobot_core_msgs_generate_messages_check_deps_DigitalOutputCommand: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalOutputCommand.dir/rule
-
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_DigitalOutputCommand
-
-# fast build rule for target.
-_sixrobot_core_msgs_generate_messages_check_deps_DigitalOutputCommand/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalOutputCommand.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalOutputCommand.dir/build
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_DigitalOutputCommand/fast
-
-# Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndpointState.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndpointState.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndpointState.dir/rule
-
-# Convenience name for target.
-_sixrobot_core_msgs_generate_messages_check_deps_EndpointState: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndpointState.dir/rule
-
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_EndpointState
-
-# fast build rule for target.
-_sixrobot_core_msgs_generate_messages_check_deps_EndpointState/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndpointState.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndpointState.dir/build
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_EndpointState/fast
-
-# Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_NavigatorStates.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_NavigatorStates.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_NavigatorStates.dir/rule
-
-# Convenience name for target.
-_sixrobot_core_msgs_generate_messages_check_deps_NavigatorStates: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_NavigatorStates.dir/rule
-
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_NavigatorStates
-
-# fast build rule for target.
-_sixrobot_core_msgs_generate_messages_check_deps_NavigatorStates/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_NavigatorStates.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_NavigatorStates.dir/build
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_NavigatorStates/fast
-
-# Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_OpenCamera.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_OpenCamera.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_OpenCamera.dir/rule
-
-# Convenience name for target.
-_sixrobot_core_msgs_generate_messages_check_deps_OpenCamera: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_OpenCamera.dir/rule
-
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_OpenCamera
-
-# fast build rule for target.
-_sixrobot_core_msgs_generate_messages_check_deps_OpenCamera/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_OpenCamera.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_OpenCamera.dir/build
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_OpenCamera/fast
-
-# Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_ListCameras.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_ListCameras.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_ListCameras.dir/rule
-
-# Convenience name for target.
-_sixrobot_core_msgs_generate_messages_check_deps_ListCameras: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_ListCameras.dir/rule
-
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_ListCameras
-
-# fast build rule for target.
-_sixrobot_core_msgs_generate_messages_check_deps_ListCameras/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_ListCameras.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_ListCameras.dir/build
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_ListCameras/fast
-
-# Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorCommand.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorCommand.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorCommand.dir/rule
-
-# Convenience name for target.
-_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorCommand: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorCommand.dir/rule
-
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_EndEffectorCommand
-
-# fast build rule for target.
-_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorCommand/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorCommand.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorCommand.dir/build
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_EndEffectorCommand/fast
-
-# Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndpointStates.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndpointStates.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndpointStates.dir/rule
-
-# Convenience name for target.
-_sixrobot_core_msgs_generate_messages_check_deps_EndpointStates: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndpointStates.dir/rule
-
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_EndpointStates
-
-# fast build rule for target.
-_sixrobot_core_msgs_generate_messages_check_deps_EndpointStates/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndpointStates.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndpointStates.dir/build
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_EndpointStates/fast
-
-# Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOState.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOState.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOState.dir/rule
-
-# Convenience name for target.
-_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOState: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOState.dir/rule
-
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_AnalogIOState
-
-# fast build rule for target.
-_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOState/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOState.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOState.dir/build
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_AnalogIOState/fast
 
 # Convenience name for target.
 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_JointCommand.dir/rule:
@@ -556,6 +286,201 @@ sixrobot_core_msgs_generate_messages_cpp/fast:
 .PHONY : sixrobot_core_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalOutputCommand.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalOutputCommand.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalOutputCommand.dir/rule
+
+# Convenience name for target.
+_sixrobot_core_msgs_generate_messages_check_deps_DigitalOutputCommand: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalOutputCommand.dir/rule
+
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_DigitalOutputCommand
+
+# fast build rule for target.
+_sixrobot_core_msgs_generate_messages_check_deps_DigitalOutputCommand/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalOutputCommand.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalOutputCommand.dir/build
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_DigitalOutputCommand/fast
+
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CloseCamera.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CloseCamera.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CloseCamera.dir/rule
+
+# Convenience name for target.
+_sixrobot_core_msgs_generate_messages_check_deps_CloseCamera: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CloseCamera.dir/rule
+
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_CloseCamera
+
+# fast build rule for target.
+_sixrobot_core_msgs_generate_messages_check_deps_CloseCamera/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CloseCamera.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CloseCamera.dir/build
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_CloseCamera/fast
+
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_SolvePositionIK.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_SolvePositionIK.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_SolvePositionIK.dir/rule
+
+# Convenience name for target.
+_sixrobot_core_msgs_generate_messages_check_deps_SolvePositionIK: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_SolvePositionIK.dir/rule
+
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_SolvePositionIK
+
+# fast build rule for target.
+_sixrobot_core_msgs_generate_messages_check_deps_SolvePositionIK/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_SolvePositionIK.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_SolvePositionIK.dir/build
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_SolvePositionIK/fast
+
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_genlisp.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_genlisp.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_genlisp.dir/rule
+
+# Convenience name for target.
+sixrobot_core_msgs_genlisp: sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_genlisp.dir/rule
+
+.PHONY : sixrobot_core_msgs_genlisp
+
+# fast build rule for target.
+sixrobot_core_msgs_genlisp/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_genlisp.dir/build.make sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_genlisp.dir/build
+.PHONY : sixrobot_core_msgs_genlisp/fast
+
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndpointState.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndpointState.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndpointState.dir/rule
+
+# Convenience name for target.
+_sixrobot_core_msgs_generate_messages_check_deps_EndpointState: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndpointState.dir/rule
+
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_EndpointState
+
+# fast build rule for target.
+_sixrobot_core_msgs_generate_messages_check_deps_EndpointState/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndpointState.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndpointState.dir/build
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_EndpointState/fast
+
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_NavigatorStates.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_NavigatorStates.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_NavigatorStates.dir/rule
+
+# Convenience name for target.
+_sixrobot_core_msgs_generate_messages_check_deps_NavigatorStates: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_NavigatorStates.dir/rule
+
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_NavigatorStates
+
+# fast build rule for target.
+_sixrobot_core_msgs_generate_messages_check_deps_NavigatorStates/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_NavigatorStates.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_NavigatorStates.dir/build
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_NavigatorStates/fast
+
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_nodejs: sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+geometry_msgs_generate_messages_nodejs/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
+.PHONY : geometry_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_ListCameras.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_ListCameras.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_ListCameras.dir/rule
+
+# Convenience name for target.
+_sixrobot_core_msgs_generate_messages_check_deps_ListCameras: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_ListCameras.dir/rule
+
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_ListCameras
+
+# fast build rule for target.
+_sixrobot_core_msgs_generate_messages_check_deps_ListCameras/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_ListCameras.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_ListCameras.dir/build
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_ListCameras/fast
+
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages.dir/rule
+
+# Convenience name for target.
+sixrobot_core_msgs_generate_messages: sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages.dir/rule
+
+.PHONY : sixrobot_core_msgs_generate_messages
+
+# fast build rule for target.
+sixrobot_core_msgs_generate_messages/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages.dir/build.make sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages.dir/build
+.PHONY : sixrobot_core_msgs_generate_messages/fast
+
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOState.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOState.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOState.dir/rule
+
+# Convenience name for target.
+_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOState: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOState.dir/rule
+
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_DigitalIOState
+
+# fast build rule for target.
+_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOState/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOState.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOState.dir/build
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_DigitalIOState/fast
+
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_lisp: sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_lisp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_lisp/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+.PHONY : geometry_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_cpp: sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_cpp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_cpp/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+.PHONY : geometry_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_py: sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_py
+
+# fast build rule for target.
+geometry_msgs_generate_messages_py/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+.PHONY : geometry_msgs_generate_messages_py/fast
+
+# Convenience name for target.
 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_NavigatorState.dir/rule:
 	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_NavigatorState.dir/rule
 .PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_NavigatorState.dir/rule
@@ -586,79 +511,169 @@ _sixrobot_core_msgs_generate_messages_check_deps_AssemblyState/fast:
 .PHONY : _sixrobot_core_msgs_generate_messages_check_deps_AssemblyState/fast
 
 # Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOStates.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOStates.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOStates.dir/rule
+sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AssemblyStates.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AssemblyStates.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AssemblyStates.dir/rule
 
 # Convenience name for target.
-_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOStates: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOStates.dir/rule
+_sixrobot_core_msgs_generate_messages_check_deps_AssemblyStates: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AssemblyStates.dir/rule
 
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_DigitalIOStates
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_AssemblyStates
 
 # fast build rule for target.
-_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOStates/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOStates.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOStates.dir/build
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_DigitalIOStates/fast
+_sixrobot_core_msgs_generate_messages_check_deps_AssemblyStates/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AssemblyStates.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AssemblyStates.dir/build
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_AssemblyStates/fast
 
 # Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages_nodejs.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages_nodejs.dir/rule
+sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-sixrobot_core_msgs_generate_messages_nodejs: sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages_nodejs.dir/rule
+sensor_msgs_generate_messages_cpp: sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : sixrobot_core_msgs_generate_messages_nodejs
+.PHONY : sensor_msgs_generate_messages_cpp
 
 # fast build rule for target.
-sixrobot_core_msgs_generate_messages_nodejs/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages_nodejs.dir/build.make sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages_nodejs.dir/build
-.PHONY : sixrobot_core_msgs_generate_messages_nodejs/fast
+sensor_msgs_generate_messages_cpp/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+.PHONY : sensor_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_HeadState.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_HeadState.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_HeadState.dir/rule
+sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOStates.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOStates.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOStates.dir/rule
 
 # Convenience name for target.
-_sixrobot_core_msgs_generate_messages_check_deps_HeadState: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_HeadState.dir/rule
+_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOStates: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOStates.dir/rule
 
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_HeadState
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_AnalogIOStates
 
 # fast build rule for target.
-_sixrobot_core_msgs_generate_messages_check_deps_HeadState/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_HeadState.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_HeadState.dir/build
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_HeadState/fast
+_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOStates/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOStates.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOStates.dir/build
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_AnalogIOStates/fast
 
 # Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_gencpp.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_gencpp.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_gencpp.dir/rule
+sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CameraControl.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CameraControl.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CameraControl.dir/rule
 
 # Convenience name for target.
-sixrobot_core_msgs_gencpp: sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_gencpp.dir/rule
+_sixrobot_core_msgs_generate_messages_check_deps_CameraControl: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CameraControl.dir/rule
 
-.PHONY : sixrobot_core_msgs_gencpp
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_CameraControl
 
 # fast build rule for target.
-sixrobot_core_msgs_gencpp/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_gencpp.dir/build.make sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_gencpp.dir/build
-.PHONY : sixrobot_core_msgs_gencpp/fast
+_sixrobot_core_msgs_generate_messages_check_deps_CameraControl/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CameraControl.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CameraControl.dir/build
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_CameraControl/fast
 
 # Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_geneus.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_geneus.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_geneus.dir/rule
+sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-sixrobot_core_msgs_geneus: sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_geneus.dir/rule
+sensor_msgs_generate_messages_lisp: sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : sixrobot_core_msgs_geneus
+.PHONY : sensor_msgs_generate_messages_lisp
 
 # fast build rule for target.
-sixrobot_core_msgs_geneus/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_geneus.dir/build.make sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_geneus.dir/build
-.PHONY : sixrobot_core_msgs_geneus/fast
+sensor_msgs_generate_messages_lisp/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+.PHONY : sensor_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorProperties.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorProperties.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorProperties.dir/rule
+
+# Convenience name for target.
+_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorProperties: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorProperties.dir/rule
+
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_EndEffectorProperties
+
+# fast build rule for target.
+_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorProperties/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorProperties.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorProperties.dir/build
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_EndEffectorProperties/fast
+
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_eus: sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_eus
+
+# fast build rule for target.
+sensor_msgs_generate_messages_eus/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+.PHONY : sensor_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorCommand.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorCommand.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorCommand.dir/rule
+
+# Convenience name for target.
+_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorCommand: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorCommand.dir/rule
+
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_EndEffectorCommand
+
+# fast build rule for target.
+_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorCommand/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorCommand.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorCommand.dir/build
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_EndEffectorCommand/fast
+
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndpointStates.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndpointStates.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndpointStates.dir/rule
+
+# Convenience name for target.
+_sixrobot_core_msgs_generate_messages_check_deps_EndpointStates: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndpointStates.dir/rule
+
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_EndpointStates
+
+# fast build rule for target.
+_sixrobot_core_msgs_generate_messages_check_deps_EndpointStates/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndpointStates.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndpointStates.dir/build
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_EndpointStates/fast
+
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOState.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOState.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOState.dir/rule
+
+# Convenience name for target.
+_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOState: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOState.dir/rule
+
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_AnalogIOState
+
+# fast build rule for target.
+_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOState/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOState.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_AnalogIOState.dir/build
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_AnalogIOState/fast
+
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_py: sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_py
+
+# fast build rule for target.
+sensor_msgs_generate_messages_py/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+.PHONY : sensor_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages_py.dir/rule:
@@ -706,49 +721,79 @@ sixrobot_core_msgs_generate_messages_lisp/fast:
 .PHONY : sixrobot_core_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorState.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorState.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorState.dir/rule
+sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorState: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorState.dir/rule
+geometry_msgs_generate_messages_eus: sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
 
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_EndEffectorState
+.PHONY : geometry_msgs_generate_messages_eus
 
 # fast build rule for target.
-_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorState/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorState.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_EndEffectorState.dir/build
-.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_EndEffectorState/fast
+geometry_msgs_generate_messages_eus/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make sixrobot_core_msgs/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+.PHONY : geometry_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_gennodejs.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_gennodejs.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_gennodejs.dir/rule
+sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_SEAJointState.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_SEAJointState.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_SEAJointState.dir/rule
 
 # Convenience name for target.
-sixrobot_core_msgs_gennodejs: sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_gennodejs.dir/rule
+_sixrobot_core_msgs_generate_messages_check_deps_SEAJointState: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_SEAJointState.dir/rule
 
-.PHONY : sixrobot_core_msgs_gennodejs
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_SEAJointState
 
 # fast build rule for target.
-sixrobot_core_msgs_gennodejs/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_gennodejs.dir/build.make sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_gennodejs.dir/build
-.PHONY : sixrobot_core_msgs_gennodejs/fast
+_sixrobot_core_msgs_generate_messages_check_deps_SEAJointState/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_SEAJointState.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_SEAJointState.dir/build
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_SEAJointState/fast
 
 # Convenience name for target.
-sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_genpy.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_genpy.dir/rule
-.PHONY : sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_genpy.dir/rule
+sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CameraSettings.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CameraSettings.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CameraSettings.dir/rule
 
 # Convenience name for target.
-sixrobot_core_msgs_genpy: sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_genpy.dir/rule
+_sixrobot_core_msgs_generate_messages_check_deps_CameraSettings: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CameraSettings.dir/rule
 
-.PHONY : sixrobot_core_msgs_genpy
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_CameraSettings
 
 # fast build rule for target.
-sixrobot_core_msgs_genpy/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_genpy.dir/build.make sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_genpy.dir/build
-.PHONY : sixrobot_core_msgs_genpy/fast
+_sixrobot_core_msgs_generate_messages_check_deps_CameraSettings/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CameraSettings.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CameraSettings.dir/build
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_CameraSettings/fast
+
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_nodejs: sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+sensor_msgs_generate_messages_nodejs/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make sixrobot_core_msgs/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+.PHONY : sensor_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_OpenCamera.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_OpenCamera.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_OpenCamera.dir/rule
+
+# Convenience name for target.
+_sixrobot_core_msgs_generate_messages_check_deps_OpenCamera: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_OpenCamera.dir/rule
+
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_OpenCamera
+
+# fast build rule for target.
+_sixrobot_core_msgs_generate_messages_check_deps_OpenCamera/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_OpenCamera.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_OpenCamera.dir/build
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_OpenCamera/fast
 
 # Convenience name for target.
 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_RobustControllerStatus.dir/rule:
@@ -765,6 +810,111 @@ _sixrobot_core_msgs_generate_messages_check_deps_RobustControllerStatus/fast:
 	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_RobustControllerStatus.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_RobustControllerStatus.dir/build
 .PHONY : _sixrobot_core_msgs_generate_messages_check_deps_RobustControllerStatus/fast
 
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CollisionDetectionState.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CollisionDetectionState.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CollisionDetectionState.dir/rule
+
+# Convenience name for target.
+_sixrobot_core_msgs_generate_messages_check_deps_CollisionDetectionState: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CollisionDetectionState.dir/rule
+
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_CollisionDetectionState
+
+# fast build rule for target.
+_sixrobot_core_msgs_generate_messages_check_deps_CollisionDetectionState/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CollisionDetectionState.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_CollisionDetectionState.dir/build
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_CollisionDetectionState/fast
+
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages_eus.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages_eus.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+sixrobot_core_msgs_generate_messages_eus: sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages_eus.dir/rule
+
+.PHONY : sixrobot_core_msgs_generate_messages_eus
+
+# fast build rule for target.
+sixrobot_core_msgs_generate_messages_eus/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages_eus.dir/build.make sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_generate_messages_eus.dir/build
+.PHONY : sixrobot_core_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_URDFConfiguration.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_URDFConfiguration.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_URDFConfiguration.dir/rule
+
+# Convenience name for target.
+_sixrobot_core_msgs_generate_messages_check_deps_URDFConfiguration: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_URDFConfiguration.dir/rule
+
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_URDFConfiguration
+
+# fast build rule for target.
+_sixrobot_core_msgs_generate_messages_check_deps_URDFConfiguration/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_URDFConfiguration.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_URDFConfiguration.dir/build
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_URDFConfiguration/fast
+
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOStates.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOStates.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOStates.dir/rule
+
+# Convenience name for target.
+_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOStates: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOStates.dir/rule
+
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_DigitalIOStates
+
+# fast build rule for target.
+_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOStates/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOStates.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_DigitalIOStates.dir/build
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_DigitalIOStates/fast
+
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_HeadState.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_HeadState.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_HeadState.dir/rule
+
+# Convenience name for target.
+_sixrobot_core_msgs_generate_messages_check_deps_HeadState: sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_HeadState.dir/rule
+
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_HeadState
+
+# fast build rule for target.
+_sixrobot_core_msgs_generate_messages_check_deps_HeadState/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_HeadState.dir/build.make sixrobot_core_msgs/CMakeFiles/_sixrobot_core_msgs_generate_messages_check_deps_HeadState.dir/build
+.PHONY : _sixrobot_core_msgs_generate_messages_check_deps_HeadState/fast
+
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_gencpp.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_gencpp.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_gencpp.dir/rule
+
+# Convenience name for target.
+sixrobot_core_msgs_gencpp: sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_gencpp.dir/rule
+
+.PHONY : sixrobot_core_msgs_gencpp
+
+# fast build rule for target.
+sixrobot_core_msgs_gencpp/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_gencpp.dir/build.make sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_gencpp.dir/build
+.PHONY : sixrobot_core_msgs_gencpp/fast
+
+# Convenience name for target.
+sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_geneus.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_geneus.dir/rule
+.PHONY : sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_geneus.dir/rule
+
+# Convenience name for target.
+sixrobot_core_msgs_geneus: sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_geneus.dir/rule
+
+.PHONY : sixrobot_core_msgs_geneus
+
+# fast build rule for target.
+sixrobot_core_msgs_geneus/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_geneus.dir/build.make sixrobot_core_msgs/CMakeFiles/sixrobot_core_msgs_geneus.dir/build
+.PHONY : sixrobot_core_msgs_geneus/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -772,52 +922,62 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... list_install_components"
+	@echo "... install"
+	@echo "... edit_cache"
+	@echo "... install/strip"
+	@echo "... sixrobot_core_msgs_genpy"
+	@echo "... sixrobot_core_msgs_generate_messages_nodejs"
+	@echo "... sixrobot_core_msgs_gennodejs"
+	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_EndEffectorState"
 	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_AnalogOutputCommand"
-	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_SolvePositionIK"
-	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_CloseCamera"
-	@echo "... sixrobot_core_msgs_genlisp"
-	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_SEAJointState"
-	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_CameraSettings"
-	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_AssemblyStates"
-	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_EndEffectorProperties"
-	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_DigitalIOState"
-	@echo "... sixrobot_core_msgs_generate_messages"
-	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_CameraControl"
-	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_AnalogIOStates"
-	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_URDFConfiguration"
-	@echo "... sixrobot_core_msgs_generate_messages_eus"
-	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_CollisionDetectionState"
-	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_DigitalOutputCommand"
-	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_EndpointState"
-	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_NavigatorStates"
-	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_OpenCamera"
-	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_ListCameras"
-	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_EndEffectorCommand"
-	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_EndpointStates"
-	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_AnalogIOState"
 	@echo "... install/local"
 	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_JointCommand"
 	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_HeadPanCommand"
 	@echo "... sixrobot_core_msgs_generate_messages_cpp"
+	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_DigitalOutputCommand"
+	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_CloseCamera"
+	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_SolvePositionIK"
+	@echo "... sixrobot_core_msgs_genlisp"
+	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_EndpointState"
+	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_NavigatorStates"
+	@echo "... geometry_msgs_generate_messages_nodejs"
+	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_ListCameras"
+	@echo "... sixrobot_core_msgs_generate_messages"
+	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_DigitalIOState"
+	@echo "... geometry_msgs_generate_messages_lisp"
+	@echo "... test"
+	@echo "... geometry_msgs_generate_messages_cpp"
+	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_NavigatorState"
 	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_AssemblyState"
-	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_DigitalIOStates"
-	@echo "... sixrobot_core_msgs_generate_messages_nodejs"
-	@echo "... edit_cache"
-	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_HeadState"
-	@echo "... sixrobot_core_msgs_gencpp"
-	@echo "... sixrobot_core_msgs_geneus"
+	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_AssemblyStates"
+	@echo "... sensor_msgs_generate_messages_cpp"
+	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_AnalogIOStates"
+	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_CameraControl"
+	@echo "... sensor_msgs_generate_messages_lisp"
+	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_EndEffectorProperties"
+	@echo "... sensor_msgs_generate_messages_eus"
+	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_EndEffectorCommand"
+	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_EndpointStates"
+	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_AnalogIOState"
+	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... sixrobot_core_msgs_generate_messages_py"
 	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_CollisionAvoidanceState"
 	@echo "... sixrobot_core_msgs_generate_messages_lisp"
-	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_EndEffectorState"
-	@echo "... sixrobot_core_msgs_gennodejs"
-	@echo "... sixrobot_core_msgs_genpy"
-	@echo "... install/strip"
-	@echo "... test"
-	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_RobustControllerStatus"
+	@echo "... geometry_msgs_generate_messages_eus"
+	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_SEAJointState"
+	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_CameraSettings"
+	@echo "... sensor_msgs_generate_messages_nodejs"
+	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_OpenCamera"
 	@echo "... rebuild_cache"
-	@echo "... install"
+	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_RobustControllerStatus"
+	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_CollisionDetectionState"
+	@echo "... sixrobot_core_msgs_generate_messages_eus"
+	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_URDFConfiguration"
+	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_DigitalIOStates"
+	@echo "... _sixrobot_core_msgs_generate_messages_check_deps_HeadState"
+	@echo "... sixrobot_core_msgs_gencpp"
+	@echo "... sixrobot_core_msgs_geneus"
 .PHONY : help
 
 

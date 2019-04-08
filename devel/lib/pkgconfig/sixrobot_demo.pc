@@ -1,0 +1,8 @@
+prefix=/home/km/catkin_ws/devel
+
+Name: sixrobot_demo
+Description: Description of sixrobot_demo
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/km/catkin_ws/devel/lib 
+Requires: roscpp rospy moveit_core moveit_ros_planning_interface
