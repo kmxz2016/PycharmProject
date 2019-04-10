@@ -3351,17 +3351,17 @@ image_converter/fast:
 .PHONY : image_converter/fast
 
 #=============================================================================
-# Target rules for targets named visonManager
+# Target rules for targets named vision_manager
 
 # Build rule for target.
-visonManager: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 visonManager
-.PHONY : visonManager
+vision_manager: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 vision_manager
+.PHONY : vision_manager
 
 # fast build rule for target.
-visonManager/fast:
-	$(MAKE) -f robot_vision/CMakeFiles/visonManager.dir/build.make robot_vision/CMakeFiles/visonManager.dir/build
-.PHONY : visonManager/fast
+vision_manager/fast:
+	$(MAKE) -f robot_vision/CMakeFiles/vision_manager.dir/build.make robot_vision/CMakeFiles/vision_manager.dir/build
+.PHONY : vision_manager/fast
 
 #=============================================================================
 # Target rules for targets named moveit_ik_demo
@@ -3738,7 +3738,7 @@ help:
 	@echo "... cylinder_segment"
 	@echo "... bag_publisher_maintain_time"
 	@echo "... image_converter"
-	@echo "... visonManager"
+	@echo "... vision_manager"
 	@echo "... moveit_ik_demo"
 	@echo "... moveit_cartesian_demo"
 	@echo "... moveit_collision_demo"

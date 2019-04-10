@@ -440,11 +440,11 @@
 /home/km/catkin_ws/build/moveit_tutorials/doc/perception_pipeline/CMakeFiles/install/local.dir
 /home/km/catkin_ws/build/robot_vision/CMakeFiles/rebuild_cache.dir
 /home/km/catkin_ws/build/robot_vision/CMakeFiles/edit_cache.dir
+/home/km/catkin_ws/build/robot_vision/CMakeFiles/test.dir
 /home/km/catkin_ws/build/robot_vision/CMakeFiles/list_install_components.dir
 /home/km/catkin_ws/build/robot_vision/CMakeFiles/install.dir
 /home/km/catkin_ws/build/robot_vision/CMakeFiles/image_converter.dir
-/home/km/catkin_ws/build/robot_vision/CMakeFiles/test.dir
-/home/km/catkin_ws/build/robot_vision/CMakeFiles/visonManager.dir
+/home/km/catkin_ws/build/robot_vision/CMakeFiles/vision_manager.dir
 /home/km/catkin_ws/build/robot_vision/CMakeFiles/install/strip.dir
 /home/km/catkin_ws/build/robot_vision/CMakeFiles/install/local.dir
 /home/km/catkin_ws/build/sixrobot_demo/CMakeFiles/install.dir

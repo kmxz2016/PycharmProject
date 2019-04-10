@@ -1,0 +1,15 @@
+<launch>
+  
+    <!-- Launch Gazebo  -->
+    <include file="$(find sixrobot_gazebo)/launch/sixrobot_anno_with_gripper/sixrobot_anno_with_gripper_gazebo_world.launch" />
+
+    <!-- ros_control arm launch file -->
+    <include file="$(find sixrobot_gazebo)/launch/sixrobot_anno_with_gripper/sixrobot_anno_with_gripper_gazebo_states.launch" />   
+
+    <!-- ros_control trajectory control dof arm launch file -->
+    <include file="$(find sixrobot_gazebo)/launch/sixrobot_anno_with_gripper/sixrobot_anno_with_gripper_trajectory_controller.launch" />
+
+    <!-- moveit launch file -->
+    <include file="$(find sixrobot_anno_with_gripper_moveit_config)/launch/moveit_planning_execution.launch">
+    </include>
+</launch>

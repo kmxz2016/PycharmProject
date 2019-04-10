@@ -78,6 +78,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -99,17 +110,6 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -181,19 +181,19 @@ image_converter/fast:
 .PHONY : image_converter/fast
 
 # Convenience name for target.
-robot_vision/CMakeFiles/visonManager.dir/rule:
-	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_vision/CMakeFiles/visonManager.dir/rule
-.PHONY : robot_vision/CMakeFiles/visonManager.dir/rule
+robot_vision/CMakeFiles/vision_manager.dir/rule:
+	cd /home/km/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_vision/CMakeFiles/vision_manager.dir/rule
+.PHONY : robot_vision/CMakeFiles/vision_manager.dir/rule
 
 # Convenience name for target.
-visonManager: robot_vision/CMakeFiles/visonManager.dir/rule
+vision_manager: robot_vision/CMakeFiles/vision_manager.dir/rule
 
-.PHONY : visonManager
+.PHONY : vision_manager
 
 # fast build rule for target.
-visonManager/fast:
-	cd /home/km/catkin_ws/build && $(MAKE) -f robot_vision/CMakeFiles/visonManager.dir/build.make robot_vision/CMakeFiles/visonManager.dir/build
-.PHONY : visonManager/fast
+vision_manager/fast:
+	cd /home/km/catkin_ws/build && $(MAKE) -f robot_vision/CMakeFiles/vision_manager.dir/build.make robot_vision/CMakeFiles/vision_manager.dir/build
+.PHONY : vision_manager/fast
 
 src/image_converter.o: src/image_converter.cpp.o
 
@@ -228,7 +228,7 @@ src/vision_manager.o: src/vision_manager.cpp.o
 
 # target to build an object file
 src/vision_manager.cpp.o:
-	cd /home/km/catkin_ws/build && $(MAKE) -f robot_vision/CMakeFiles/visonManager.dir/build.make robot_vision/CMakeFiles/visonManager.dir/src/vision_manager.cpp.o
+	cd /home/km/catkin_ws/build && $(MAKE) -f robot_vision/CMakeFiles/vision_manager.dir/build.make robot_vision/CMakeFiles/vision_manager.dir/src/vision_manager.cpp.o
 .PHONY : src/vision_manager.cpp.o
 
 src/vision_manager.i: src/vision_manager.cpp.i
@@ -237,7 +237,7 @@ src/vision_manager.i: src/vision_manager.cpp.i
 
 # target to preprocess a source file
 src/vision_manager.cpp.i:
-	cd /home/km/catkin_ws/build && $(MAKE) -f robot_vision/CMakeFiles/visonManager.dir/build.make robot_vision/CMakeFiles/visonManager.dir/src/vision_manager.cpp.i
+	cd /home/km/catkin_ws/build && $(MAKE) -f robot_vision/CMakeFiles/vision_manager.dir/build.make robot_vision/CMakeFiles/vision_manager.dir/src/vision_manager.cpp.i
 .PHONY : src/vision_manager.cpp.i
 
 src/vision_manager.s: src/vision_manager.cpp.s
@@ -246,7 +246,7 @@ src/vision_manager.s: src/vision_manager.cpp.s
 
 # target to generate assembly for a file
 src/vision_manager.cpp.s:
-	cd /home/km/catkin_ws/build && $(MAKE) -f robot_vision/CMakeFiles/visonManager.dir/build.make robot_vision/CMakeFiles/visonManager.dir/src/vision_manager.cpp.s
+	cd /home/km/catkin_ws/build && $(MAKE) -f robot_vision/CMakeFiles/vision_manager.dir/build.make robot_vision/CMakeFiles/vision_manager.dir/src/vision_manager.cpp.s
 .PHONY : src/vision_manager.cpp.s
 
 # Help Target
@@ -257,11 +257,11 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... test"
 	@echo "... list_install_components"
 	@echo "... install"
 	@echo "... image_converter"
-	@echo "... test"
-	@echo "... visonManager"
+	@echo "... vision_manager"
 	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... src/image_converter.o"

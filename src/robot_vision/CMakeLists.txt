@@ -161,8 +161,8 @@ add_executable(image_converter src/image_converter.cpp)
 target_link_libraries(image_converter ${catkin_LIBRARIES} ${OpenCV_LIBS})
 
 
-add_executable(visonManager src/vision_manager.cpp)
-target_link_libraries(visonManager ${catkin_LIBRARIES} ${OpenCV_LIBS})
+add_executable(vision_manager src/vision_manager.cpp)
+target_link_libraries(vision_manager ${catkin_LIBRARIES} ${OpenCV_LIBS})
 
 #############
 ## Install ##

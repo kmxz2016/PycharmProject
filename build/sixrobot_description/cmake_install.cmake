@@ -47,3 +47,15 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/sixrobot_description" TYPE FILE FILES "/home/km/catkin_ws/src/sixrobot_description/package.xml")
 endif()
 
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/sixrobot_description" TYPE DIRECTORY FILES "/home/km/catkin_ws/src/sixrobot_description/launch")
+endif()
+
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/sixrobot_description" TYPE DIRECTORY FILES "/home/km/catkin_ws/src/sixrobot_description/meshes")
+endif()
+
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/sixrobot_description" TYPE DIRECTORY FILES "/home/km/catkin_ws/src/sixrobot_description/urdf")
+endif()
+

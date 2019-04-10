@@ -22,7 +22,7 @@ VisionManager::VisionManager(ros::NodeHandle n_, float length, float breadth) : 
 	this->table_breadth = breadth;
 
   	// Subscribe to input video feed and publish object location
-  	image_sub_  = it_.subscribe("/robot_anno/camera/image_raw", 1, &VisionManager::imageCb, this);
+  	image_sub_  = it_.subscribe("/sixrobot_anno/camera/image_raw", 1, &VisionManager::imageCb, this);
 	image1_pub_ = it_.advertise("/table_detect", 1);
 	image2_pub_ = it_.advertise("/object_detect", 1);
 }

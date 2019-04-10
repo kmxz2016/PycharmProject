@@ -14,8 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ***********************************************************************/
 
-#ifndef PROBOT_VISION_MANAGER
-#define PROBOT_VISION_MANAGER
+#ifndef SIXROBOT_VISION_MANAGER
+#define SIXROBOT_VISION_MANAGER
 
 #include <stdio.h>
 #include <stdlib.h>

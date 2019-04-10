@@ -8947,13 +8947,13 @@ clean: moveit_tutorials/doc/perception_pipeline/CMakeFiles/bag_publisher_maintai
 
 # Convenience name for "all" pass in the directory.
 robot_vision/all: robot_vision/CMakeFiles/image_converter.dir/all
-robot_vision/all: robot_vision/CMakeFiles/visonManager.dir/all
+robot_vision/all: robot_vision/CMakeFiles/vision_manager.dir/all
 
 .PHONY : robot_vision/all
 
 # Convenience name for "clean" pass in the directory.
 robot_vision/clean: robot_vision/CMakeFiles/image_converter.dir/clean
-robot_vision/clean: robot_vision/CMakeFiles/visonManager.dir/clean
+robot_vision/clean: robot_vision/CMakeFiles/vision_manager.dir/clean
 
 .PHONY : robot_vision/clean
 
@@ -9000,39 +9000,39 @@ clean: robot_vision/CMakeFiles/image_converter.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target robot_vision/CMakeFiles/visonManager.dir
+# Target rules for target robot_vision/CMakeFiles/vision_manager.dir
 
 # All Build rule for target.
-robot_vision/CMakeFiles/visonManager.dir/all:
-	$(MAKE) -f robot_vision/CMakeFiles/visonManager.dir/build.make robot_vision/CMakeFiles/visonManager.dir/depend
-	$(MAKE) -f robot_vision/CMakeFiles/visonManager.dir/build.make robot_vision/CMakeFiles/visonManager.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/km/catkin_ws/build/CMakeFiles --progress-num=98 "Built target visonManager"
-.PHONY : robot_vision/CMakeFiles/visonManager.dir/all
+robot_vision/CMakeFiles/vision_manager.dir/all:
+	$(MAKE) -f robot_vision/CMakeFiles/vision_manager.dir/build.make robot_vision/CMakeFiles/vision_manager.dir/depend
+	$(MAKE) -f robot_vision/CMakeFiles/vision_manager.dir/build.make robot_vision/CMakeFiles/vision_manager.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/km/catkin_ws/build/CMakeFiles --progress-num=98 "Built target vision_manager"
+.PHONY : robot_vision/CMakeFiles/vision_manager.dir/all
 
 # Include target in all.
-all: robot_vision/CMakeFiles/visonManager.dir/all
+all: robot_vision/CMakeFiles/vision_manager.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-robot_vision/CMakeFiles/visonManager.dir/rule: cmake_check_build_system
+robot_vision/CMakeFiles/vision_manager.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/km/catkin_ws/build/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 robot_vision/CMakeFiles/visonManager.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 robot_vision/CMakeFiles/vision_manager.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/km/catkin_ws/build/CMakeFiles 0
-.PHONY : robot_vision/CMakeFiles/visonManager.dir/rule
+.PHONY : robot_vision/CMakeFiles/vision_manager.dir/rule
 
 # Convenience name for target.
-visonManager: robot_vision/CMakeFiles/visonManager.dir/rule
+vision_manager: robot_vision/CMakeFiles/vision_manager.dir/rule
 
-.PHONY : visonManager
-
-# clean rule for target.
-robot_vision/CMakeFiles/visonManager.dir/clean:
-	$(MAKE) -f robot_vision/CMakeFiles/visonManager.dir/build.make robot_vision/CMakeFiles/visonManager.dir/clean
-.PHONY : robot_vision/CMakeFiles/visonManager.dir/clean
+.PHONY : vision_manager
 
 # clean rule for target.
-clean: robot_vision/CMakeFiles/visonManager.dir/clean
+robot_vision/CMakeFiles/vision_manager.dir/clean:
+	$(MAKE) -f robot_vision/CMakeFiles/vision_manager.dir/build.make robot_vision/CMakeFiles/vision_manager.dir/clean
+.PHONY : robot_vision/CMakeFiles/vision_manager.dir/clean
+
+# clean rule for target.
+clean: robot_vision/CMakeFiles/vision_manager.dir/clean
 
 .PHONY : clean
 
