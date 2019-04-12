@@ -3468,6 +3468,32 @@ moveit_continue_trajectory_demo/fast:
 .PHONY : moveit_continue_trajectory_demo/fast
 
 #=============================================================================
+# Target rules for targets named visonManager
+
+# Build rule for target.
+visonManager: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 visonManager
+.PHONY : visonManager
+
+# fast build rule for target.
+visonManager/fast:
+	$(MAKE) -f sixrobot_grasping/CMakeFiles/visonManager.dir/build.make sixrobot_grasping/CMakeFiles/visonManager.dir/build
+.PHONY : visonManager/fast
+
+#=============================================================================
+# Target rules for targets named graspingDemo
+
+# Build rule for target.
+graspingDemo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 graspingDemo
+.PHONY : graspingDemo
+
+# fast build rule for target.
+graspingDemo/fast:
+	$(MAKE) -f sixrobot_grasping/CMakeFiles/graspingDemo.dir/build.make sixrobot_grasping/CMakeFiles/graspingDemo.dir/build
+.PHONY : graspingDemo/fast
+
+#=============================================================================
 # Target rules for targets named sixrobot_description_xacro_generated_to_devel_space_
 
 # Build rule for target.
@@ -3747,6 +3773,8 @@ help:
 	@echo "... moveit_revise_trajectory_demo"
 	@echo "... moveit_circle_demo"
 	@echo "... moveit_continue_trajectory_demo"
+	@echo "... visonManager"
+	@echo "... graspingDemo"
 	@echo "... sixrobot_description_xacro_generated_to_devel_space_"
 .PHONY : help
 

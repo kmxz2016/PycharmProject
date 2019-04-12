@@ -1,0 +1,8 @@
+prefix=/home/km/catkin_ws/install
+
+Name: sixrobot_grasping
+Description: Description of sixrobot_grasping
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/km/catkin_ws/install/lib 
+Requires: 
