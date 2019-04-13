@@ -133,7 +133,7 @@ void GraspingDemo::attainObject()
   target_pose1.orientation = currPose.pose.orientation;
   target_pose1.position = currPose.pose.position;
 
-  target_pose1.position.z = obj_robot_frame.getZ() - 0.02;
+  target_pose1.position.z = obj_robot_frame.getZ() - 0.04;
   armgroup.setPoseTarget(target_pose1);
   armgroup.move();
 }
@@ -159,15 +159,15 @@ void GraspingDemo::lift()
   target_pose1.position = currPose.pose.position;
 
   // Starting Postion after picking
-  //target_pose1.position.z = target_pose1.position.z + 0.06;
+  //target_pose1.position.z = target_pose1.position.z + 0.04;
 
   if(rand() % 2)
   {
-    target_pose1.position.y = target_pose1.position.y + 0.02;
+    target_pose1.position.x = target_pose1.position.x + 0.02;
   }
   else
   {
-    target_pose1.position.y = target_pose1.position.y - 0.02;
+    target_pose1.position.x = target_pose1.position.x - 0.02;
   }
   
   armgroup.setPoseTarget(target_pose1);
@@ -178,7 +178,7 @@ void GraspingDemo::lift()
   grippergroup.setNamedTarget("open");
   grippergroup.move();
 
-  target_pose1.position.z = target_pose1.position.z + 0.06;
+  target_pose1.position.z = target_pose1.position.z + 0.04;
   armgroup.setPoseTarget(target_pose1);
   armgroup.move();
 }
@@ -225,11 +225,11 @@ int main(int argc, char **argv)
   if (!n.getParam("sixrobot_grasping/table_breadth", breadth))
     breadth = 0.3;
   if (!n.getParam("sixrobot_grasping/pregrasp_x", pregrasp_x))
-    pregrasp_x = 0.20;
+    pregrasp_x = -0.0004;
   if (!n.getParam("sixrobot_grasping/pregrasp_y", pregrasp_y))
-    pregrasp_y = -0.17;
+    pregrasp_y = -0.35;
   if (!n.getParam("sixrobot_grasping/pregrasp_z", pregrasp_z))
-    pregrasp_z = 0.28;
+    pregrasp_z = 0.44;
 
   GraspingDemo simGrasp(n, pregrasp_x, pregrasp_y, pregrasp_z, length, breadth);
   ROS_INFO_STREAM("Waiting for five seconds..");
